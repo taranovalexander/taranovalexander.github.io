@@ -13,7 +13,6 @@ function SceneController($scope) {
 
   windowElement.load(function(){
     angular.element('#loader').hide();
-    showMess(0);
   });
 
   modes.collection = [
@@ -54,4 +53,3 @@ function showMess(idx) {
     showMess(idx + 1 < $elements.length ? idx + 1 : 0);
   });
 }
-
