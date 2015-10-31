@@ -1,0 +1,18 @@
+# Environment
+.idea
+.DS_store
+.directory
+
+# Logs
+logs
+*.log
+
+# Cache
+.sass-cache
+.tmp
+.grunt
+
+# Dependency directory
+node_modules
+bower_components
+dist
