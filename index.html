@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Taranov Alexander Front-End developer">
+    <meta id="siteViewport" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alexander Taranov</title>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="libraries/normalize.css/normalize.css" />
+    <!-- endbower -->
+    <!--[if lt IE 9]>
+  <script src="libraries/tml5shiv/html5shiv.js"></script>
+  <script src="libraries/respond/respond.min.js"></script>
+  <![endif]-->
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="scss/common.css">
+    <link rel="stylesheet" href="scss/main.css">
+    <!-- bower:js -->
+    <script src="libraries/jquery/jquery.js"></script>
+    <script src="libraries/jquery-migrate/jquery-migrate.js"></script>
+    <script src="libraries/jquery-placeholder/jquery.placeholder.js"></script>
+    <script src="libraries/angular/angular.js"></script>
+    <!-- endbower -->
+    <!-- Main JS -->
+    <script src="js/modernizr.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/app.controller.js"></script>
+    <script src="app/bear/bear.module.js"></script>
+    <script src="app/bear/bear.directive.js"></script>
+    <script src="app/developer/developer.module.js"></script>
+    <script src="app/developer/developer.directive.js"></script>
+    <!-- Add New Blocks JS Above -->
+  </head>
+  <body>
+    <div class="scene" ng-controller="ChangeMode as modes">
+      <div class="scene__container">
+        <div class="scene__region-title">
+          <h1 class="scene__title">Frontend
+            <br/>developer</h1>
+          <div class="scene__sub-title">Hello! I’m front-end developer from Siberia</br> and I like to make cool stuff!</div>
+        </div>
+      </div>
+      <div class="scene__action">
+        <div class="scene__region-bear">
+          <div class="bear" bind-bear-touch>
+            <div class="bear__border">
+              <div class="bear__point bear__point--top-left"></div>
+              <div class="bear__point bear__point--top-right"></div>
+              <div class="bear__point bear__point--bottom-left"></div>
+              <div class="bear__point bear__point--bottom-right"></div>
+              <div class="bear__image"></div>
+              <div class="bear__messages">
+                <div class="bear__messages-container">
+                  <div class="bear__message bear__message--before dialog-text dialog-text--sub">
+                    <span class="sz-3">Agr</span>
+                    <span class="sz-1">rr</span>
+                  </div>
+                  <div class="bear__message dialog-text">
+                    <span class="sz-2">aaa</span>
+                    <span class="sz-3">grrg</span>
+                    <span class="sz-1">hh</span>
+                  </div>
+                  <div class="bear__message bear__message--after dialog-text dialog-text--sub">
+                    <span class="sz-2">aa</span>
+                    <span class="sz-3">grg</span>
+                    <span class="sz-1">h</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="scene__region-modes">
+          <div class="modes">
+            <ul class="modes__list">
+              <li class="modes__item" ng-repeat="mode in modes.collection" ng-class="{'active': mode.id==activeMode.id}">
+                <span class="modes__link" ng-click="showMode(mode.id)">
+                  {{ mode.nav }}
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="scene__region-developer">
+          <div class="developer">
+            <div class="developer__mod" ng-style="devStyle">
+              <div class="developer__messages">
+                <div class="developer__message dialog-text" ng-repeat="message in activeMode.messages" on-finish-render="showMessage">
+                  {{ message }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main class="main">
+      <div class="section ">
+        <div class="section__container">
+          <h2 class="section__title">My tools</h2>
+          <div class="section__content">
+            <div class="tools">
+              <div class="tools__item">
+                <div class="tools__item-image">
+                  <img src="images/tools/bower.png" alt="" />
+                </div>
+              </div>
+              <div class="tools__item">
+                <div class="tools__item-image">
+                  <img src="images/tools/git.png" alt="" />
+                </div>
+              </div>
+              <div class="tools__item">
+                <div class="tools__item-image">
+                  <img src="images/tools/grunt.png" alt="" />
+                </div>
+              </div>
+              <div class="tools__item">
+                <div class="tools__item-image">
+                  <img src="images/tools/ps.png" alt="" />
+                </div>
+              </div>
+              <div class="tools__item">
+                <div class="tools__item-image">
+                  <img src="images/tools/redmine.png" alt="" />
+                </div>
+              </div>
+              <div class="tools__item">
+                <div class="tools__item-image">
+                  <img src="images/tools/ubuntu.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main__shift"></div>
+    </main>
+    <div class="section  section--contacts ">
+      <div class="section__container">
+        <h2 class="section__title"></h2>
+        <div class="section__content">
+          <div class="region-bottom">
+            <div class="region-bottom__block">
+              <div class="social">
+                <h3 class="social__title">Social</h3>
+                <div class="social__item">
+                  <div class="social__icon social__icon--vk"></div>
+                  <a href="http://vk.com/taranov_a" target="_blank" class="social__link social__link--vk">Look at my sibirian life</a>
+                </div>
+                <div class="social__item">
+                  <div class="social__icon social__icon--gh"></div>
+                  <a href="http://github.com/taranovalexander" target="_blank" class="social__link social__link--gh">Look at my sibirian code</a>
+                </div>
+                <div class="social__item">
+                  <div class="social__icon social__icon--sk"></div>
+                  <a href="skype:alexander_taranov?call" class="social__link social__link--sk">Just call me</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display: none">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <filter id="menu__blur">
+          <feGaussianBlur stdDeviation="3" />
+        </filter>
+      </svg>
+    </div>
+  </body>
+</html>
