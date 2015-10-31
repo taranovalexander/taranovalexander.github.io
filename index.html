@@ -33,7 +33,7 @@
     <!-- Add New Blocks JS Above -->
   </head>
   <body>
-    <div class="scene" ng-controller="ChangeMode as modes">
+    <div class="scene" ng-controller="SceneController as modes">
       <div class="scene__container">
         <div class="scene__region-title">
           <h1 class="scene__title">Frontend
@@ -74,8 +74,8 @@
         <div class="scene__region-modes">
           <div class="modes">
             <ul class="modes__list">
-              <li class="modes__item" ng-repeat="mode in modes.collection" ng-class="{'active': mode.id==activeMode.id}">
-                <span class="modes__link" ng-click="showMode(mode.id)">
+              <li class="modes__item" ng-repeat="mode in modes.collection" ng-class="{'active': mode.id==modes.activeMode.id}">
+                <span class="modes__link" ng-click="modes.showMode(mode.id)">
                   {{ mode.nav }}
                 </span>
               </li>
@@ -84,9 +84,9 @@
         </div>
         <div class="scene__region-developer">
           <div class="developer">
-            <div class="developer__mod" ng-style="devStyle">
+            <div class="developer__mod" ng-style="modes.devStyle">
               <div class="developer__messages">
-                <div class="developer__message dialog-text" ng-repeat="message in activeMode.messages" on-finish-render="showMessage">
+                <div class="developer__message dialog-text" ng-repeat="message in modes.activeMode.messages" on-finish-render="showMessage">
                   {{ message }}
                 </div>
               </div>
@@ -170,5 +170,6 @@
         </filter>
       </svg>
     </div>
+    <div id="loader"></div>
   </body>
 </html>

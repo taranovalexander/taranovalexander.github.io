@@ -178,6 +178,13 @@ textarea.error {
   border-radius: 5px;
 }
 
+#loader {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  position: fixed;
+}
+
 @media (max-width: 1199px) {
   .hidden-tablet {
     display: none !important;
