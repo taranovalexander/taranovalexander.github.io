@@ -13,7 +13,7 @@ function SceneController($scope) {
 
   windowElement.load(function(){
     angular.element('#loader').hide();
-    showMess();
+    showMess(0);
   });
 
   modes.collection = [
@@ -44,11 +44,11 @@ function SceneController($scope) {
   };
 
   $scope.$on('showMessage', function (ngRepeatFinishedEvent) {
-    showMess();
+    showMess(0);
   });
 }
 
-function showMess() {
+function showMess(idx) {
   var $elements = angular.element('.developer__message');
   $elements.eq(idx).fadeIn(2000).fadeOut(2000, function () {
     showMess(mess, idx + 1 < $elements.length ? idx + 1 : 0);
