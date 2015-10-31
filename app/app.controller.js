@@ -51,7 +51,7 @@ function SceneController($scope) {
 function showMess(idx) {
   var $elements = angular.element('.developer__message');
   $elements.eq(idx).fadeIn(2000).fadeOut(2000, function () {
-    showMess(mess, idx + 1 < $elements.length ? idx + 1 : 0);
+    showMess(idx + 1 < $elements.length ? idx + 1 : 0);
   });
 }
 
