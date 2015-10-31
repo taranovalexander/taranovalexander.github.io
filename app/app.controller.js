@@ -13,6 +13,7 @@ function SceneController($scope) {
 
   windowElement.load(function(){
     angular.element('#loader').hide();
+    showMess();
   });
 
   modes.collection = [
@@ -43,17 +44,14 @@ function SceneController($scope) {
   };
 
   $scope.$on('showMessage', function (ngRepeatFinishedEvent) {
-    var items = angular.element('.developer__message');
-
-    showMess(items, 0);
-    function showMess(mess, idx) {
-      var $elements = mess;
-      $elements.eq(idx).fadeIn(2000).fadeOut(2000, function () {
-        showMess(mess, idx + 1 < $elements.length ? idx + 1 : 0);
-      });
-    }
+    showMess();
   });
 }
 
-
+function showMess() {
+  var $elements = angular.element('.developer__message');
+  $elements.eq(idx).fadeIn(2000).fadeOut(2000, function () {
+    showMess(mess, idx + 1 < $elements.length ? idx + 1 : 0);
+  });
+}
 
