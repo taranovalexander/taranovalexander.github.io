@@ -376,7 +376,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   .modes__link {
     font-size: 14px;
-    padding: 8px;
+    padding: 8px 4px;
   }
 }
 

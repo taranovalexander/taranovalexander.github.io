@@ -32,7 +32,7 @@ function SceneController($scope) {
     {
       "messages": ["Bug will not pass!!!"],
       "imgSrc": "images/mod-3.png",
-      "nav": "Middle-earth mode",
+      "nav": "Gendalf mode",
       "id": 2
     }
   ];
