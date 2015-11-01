@@ -56,7 +56,7 @@ function SceneController($scope) {
 
 function showMess(idx, mess) {
   var $elements = mess;
-  $elements.eq(idx).fadeIn(2500).fadeOut(2500, function () {
+  $elements.eq(idx).fadeIn(2100).fadeOut(2100, function () {
     showMess(idx + 1 < $elements.length ? idx + 1 : 0, mess);
   });
 }
