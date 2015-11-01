@@ -13,6 +13,7 @@ function SceneController($scope) {
 
   windowElement.load(function(){
     angular.element('#loader').hide();
+    $scope.$apply();
   });
 
   modes.collection = [
@@ -35,6 +36,10 @@ function SceneController($scope) {
       "id": 2
     }
   ];
+  angular.forEach(modes.collection, function(value, key) {
+    angular.element('<img/>')[0].src = value.imgSrc;
+  });
+
   modes.activeMode = modes.collection[0];
 
   modes.showMode = function (idx) {
