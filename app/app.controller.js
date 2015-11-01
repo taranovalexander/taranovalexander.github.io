@@ -12,7 +12,7 @@ function SceneController($scope) {
     windowElement = angular.element(window);
 
   windowElement.load(function(){
-    //angular.element('#loader').hide();
+    angular.element('#loader').hide();
   });
 
   modes.collection = [
