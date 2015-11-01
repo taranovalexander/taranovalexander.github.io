@@ -114,17 +114,21 @@ $ico-layout: horizontal;
 }
 */
 .loader-container {
-  height: 80px;
+  height: 130px;
   overflow: hidden;
   position: absolute;
   width: 100%;
   top: 50%;
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 25px;
   transform: translateY(-50%);
 }
 
 .loader {
   font-size: 10px;
-  margin: 35px auto;
+  margin: 45px auto;
   width: 1em;
   height: 1em;
   border-radius: 50%;
