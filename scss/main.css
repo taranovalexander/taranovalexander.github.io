@@ -538,7 +538,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .region-bottom {
-  padding: 80px 0;
+  padding: 60px 0;
 }
 .lt-ie8 .region-bottom__block {
   zoom: 1;
@@ -574,7 +574,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .social__title {
-  font-size: 40px;
+  font-size: 60px;
   letter-spacing: 0.05em;
   margin: 0 0 20px;
 }
@@ -603,6 +603,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .social__link--sk {
   background: #00AFF0;
+}
+.social__link--email {
+  background: #d14836;
 }
 .social__item {
   position: relative;
@@ -633,6 +636,10 @@ h1, h2, h3, h4, h5, h6 {
 .social__icon--sk {
   background-color: #00AFF0;
   background-image: url(../images/social-icon/icon-skype.png);
+}
+.social__icon--email {
+  background-color: #d14836;
+  background-image: url(../images/social-icon/icon-email.png);
 }
 @media (max-width: 767px) {
   .social__title {
