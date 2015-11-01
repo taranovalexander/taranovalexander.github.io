@@ -37,7 +37,8 @@ function SceneController($scope) {
     }
   ];
   angular.forEach(modes.collection, function(value, key) {
-    angular.element('<img/>')[0].src = value.imgSrc;
+    var image = new Image();
+    image.src = value.imgSrc;
   });
 
   modes.activeMode = modes.collection[0];
