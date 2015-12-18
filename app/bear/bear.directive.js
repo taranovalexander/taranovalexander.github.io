@@ -2,7 +2,7 @@
 "use strict";
 
 angular
-  .module('app.bear')
+  .module('bear')
   .directive('bindBearTouch', bindBearTouch);
 
 function bindBearTouch() {

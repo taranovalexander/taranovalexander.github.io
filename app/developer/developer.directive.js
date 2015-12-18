@@ -2,7 +2,7 @@
 "use strict";
 
 angular
-  .module('app.developer')
+  .module('developer')
   .directive('onFinishRender', onFinishRender);
 
 onFinishRender.$inject = ['$timeout'];

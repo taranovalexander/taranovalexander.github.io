@@ -36,25 +36,30 @@ function SceneController($scope) {
       "id": 2
     }
   ];
+
+  // Set first mode
+  modes.activeMode = modes.collection[0];
+
+  // image preloader
   angular.forEach(modes.collection, function(value, key) {
     var image = new Image();
     image.src = value.imgSrc;
   });
 
-  modes.activeMode = modes.collection[0];
-
+  // call when click on mode menu
   modes.showMode = function (idx) {
     modes.activeMode = modes.collection[idx];
   };
 
-  $scope.$on('showMessage', function (ngRepeatFinishedEvent) {
+  // call when rendered all messages after change mode
+  $scope.$on('showMessage', function () {
     var mess = angular.element('.developer__message');
 
     showMess(0, mess);
     modes.devStyle = {'background-image': 'url(' + modes.activeMode.imgSrc + ')'};
   });
 }
-
+// function to show messages in queue
 function showMess(idx, mess) {
   var $elements = mess;
   $elements.eq(idx).fadeIn(2100).fadeOut(2100, function () {

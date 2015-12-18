@@ -1,5 +1,6 @@
 /* == IE == */
 @import url(../fonts/bebas/stylesheet.css);
+@import url(../fonts/digitalStrip/stylesheet.css);
 a {
   text-decoration: none;
   color: #4e7efc;
@@ -96,8 +97,10 @@ h1, h2, h3, h4, h5, h6 {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  margin-bottom: 90px;
   overflow: hidden;
+  position: relative;
+  height: 100vh;
+  min-height: 500px;
 }
 .scene__container {
   box-sizing: border-box;
@@ -148,18 +151,20 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 22px;
 }
 .scene__action {
-  position: relative;
-  height: 500px;
+  position: absolute;
+  height: 80%;
   width: 100%;
+  bottom: 0;
 }
 .scene__region-bear {
   position: absolute;
-  bottom: 150px;
+  bottom: 50px;
   left: 10%;
 }
 .scene__region-developer {
   position: absolute;
   bottom: 0;
+  z-index: 20;
   right: 5%;
 }
 .scene__region-modes {
@@ -167,11 +172,17 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 20px;
   width: 100%;
   text-align: center;
-  z-index: 1;
+  z-index: 100;
 }
 @media (max-width: 991px) {
+  .scene {
+    min-height: 0;
+  }
   .scene__action {
     height: 420px;
+  }
+  .scene__region-bear {
+    bottom: 110px;
   }
 }
 @media (max-width: 767px) {
@@ -182,7 +193,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 300px;
   }
   .scene__region-bear {
-    bottom: 90px;
+    bottom: 30px;
     left: 5%;
   }
   .scene__sub-title {
@@ -192,6 +203,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 479px) {
   .scene__region-bear {
     left: 0;
+    bottom: 90px;
   }
   .scene__developer {
     right: 0;
@@ -202,8 +214,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bear {
-  width: 204px;
-  height: 204px;
+  width: 194px;
+  height: 194px;
 }
 .bear.hover-effect .bear__messages-container {
   opacity: 1;
@@ -212,8 +224,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .bear__border {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 190px;
+  height: 190px;
   border: 1px solid #ffffff;
 }
 .bear__point {
@@ -295,22 +307,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-width: 991px) {
   .bear {
-    width: 164px;
-    height: 164px;
+    width: 194px;
+    height: 194px;
   }
   .bear__border {
-    width: 160px;
-    height: 160px;
+    width: 190px;
+    height: 190px;
   }
 }
 @media (max-width: 767px) {
   .bear {
-    width: 114px;
-    height: 114px;
+    width: 150px;
+    height: 150px;
   }
   .bear__border {
-    width: 110px;
-    height: 110px;
+    width: 146px;
+    height: 146px;
     border: none;
   }
   .bear__point {
@@ -381,8 +393,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .developer {
-  width: 435px;
-  height: 550px;
+  width: 350px;
+  height: 460px;
 }
 .developer__mod {
   position: relative;
@@ -396,7 +408,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .developer__messages {
   position: absolute;
-  left: 40%;
+  left: 30%;
   top: 15%;
   -moz-transform: rotate(4deg) translateX(-100%);
   -ms-transform: rotate(4deg) translateX(-100%);
@@ -415,8 +427,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-width: 991px) {
   .developer {
-    width: 340px;
-    height: 430px;
+    width: 350px;
+    height: 460px;
   }
 }
 @media (max-width: 767px) {
@@ -430,13 +442,26 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 @media (max-width: 479px) {
+  .developer {
+    width: 285px;
+    height: 388px;
+  }
+  .developer__messages {
+    top: 0;
+    left: 55%;
+  }
   .developer__message {
     width: 140px;
     font-size: 18px;
   }
 }
 
+.section {
+  padding-top: 90px;
+  clear: both;
+}
 .section__container {
+  position: relative;
   box-sizing: border-box;
   padding: 0 10px;
   margin: 0 auto;
@@ -466,6 +491,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 60px;
   text-align: center;
   margin: 0 0 0.6em;
+  display: none;
 }
 .section__title:after {
   content: "";
@@ -479,13 +505,26 @@ h1, h2, h3, h4, h5, h6 {
   border-right: 2px solid #333;
 }
 @media (max-width: 767px) {
+  .section {
+    padding-top: 10px;
+  }
   .section__title {
+    display: block;
     font-size: 35px;
   }
 }
 
-.section--contacts .section__container {
+.section--even {
+  background: transparent;
+}
+
+.section--odd {
+  background: rgba(64, 117, 255, 0.37);
+}
+
+.section--contacts {
   border-top: 1px solid #e1e1e1;
+  padding-top: 0;
 }
 .section--contacts .section__title {
   display: none;
@@ -493,19 +532,75 @@ h1, h2, h3, h4, h5, h6 {
 
 .tools {
   font-size: 0;
-  padding-bottom: 20px;
+}
+.lt-ie8 .tools {
+  zoom: 1;
+}
+.tools:before, .tools:after {
+  display: table;
+  content: " ";
+}
+.tools:after {
+  clear: both;
 }
 .tools__item {
-  width: 30%;
+  width: 50%;
   display: inline-block;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 .tools__item img {
   max-width: 100%;
 }
+.tools__container {
+  width: 50%;
+  float: right;
+  margin-top: 30px;
+  min-height: 310px;
+}
+.tools__im {
+  display: inline-block;
+  height: 400px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.tools__im img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.tools__message {
+  font-size: 14px;
+  width: 200px;
+  height: 150px;
+  background: url(../images/text-right.png) no-repeat center;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translate(-60%, -35%);
+  font-family: "digitalStrip";
+}
+.tools__message .text {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 17% 10% 15% 25%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 @media (max-width: 767px) {
   .tools {
     padding-bottom: 10px;
+  }
+  .tools__container {
+    margin-top: 0;
+    min-height: 0;
+    width: 100%;
+  }
+  .tools__im {
+    display: none;
   }
   .tools__item {
     width: 50%;
@@ -514,6 +609,26 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box;
     text-align: center;
   }
+}
+
+.tools--right .tools__container {
+  float: left;
+}
+.tools--right .tools__im {
+  position: absolute;
+  bottom: 0;
+  left: auto;
+  right: 0;
+}
+.tools--right .tools__message {
+  background: url(../images/text-left.png) no-repeat center;
+  background-size: contain;
+  top: 0;
+  left: 0;
+  transform: translate(-60%, -35%);
+}
+.tools--right .tools__message .text {
+  padding: 17% 25% 15% 10%;
 }
 
 .contacts__title {

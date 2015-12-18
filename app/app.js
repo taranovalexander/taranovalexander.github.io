@@ -3,6 +3,6 @@
 
 angular
   .module('app', [
-    'app.developer',
-    'app.bear'
+    'developer',
+    'bear'
   ]);
