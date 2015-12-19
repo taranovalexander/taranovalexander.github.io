@@ -577,8 +577,10 @@ h1, h2, h3, h4, h5, h6 {
   background-size: contain;
   position: absolute;
   top: 0;
+  opacity: 0;
   left: 100%;
   transform: translate(-60%, -35%);
+  transition: opacity 0.3s;
   font-family: "digitalStrip";
 }
 .tools__message .text {
@@ -629,6 +631,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 .tools--right .tools__message .text {
   padding: 17% 25% 15% 10%;
+}
+
+.section.active .tools__message {
+  opacity: 1;
 }
 
 .contacts__title {
