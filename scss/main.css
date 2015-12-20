@@ -52,6 +52,34 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.8em;
 }
 
+.cursor-in-out:after {
+  visibility: hidden;
+}
+
+.active .cursor-in-out:after {
+  visibility: visible;
+  content: "";
+  width: 1px;
+  height: 100%;
+  font-size: 0.7em;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.15em;
+  left: 10px;
+  border-right: 2px solid #333;
+  -moz-animation: 1s show-hide infinite step-end;
+  -webkit-animation: 1s show-hide infinite step-end;
+  animation: 1s show-hide infinite step-end;
+}
+
+@-webkit-keyframes show-hide {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 @keyframes dialog {
   0% {
     -moz-transform: scale(none);
@@ -159,17 +187,6 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   margin-top: 0.5em;
   margin-bottom: 10px;
-}
-.scene__title:after {
-  content: "";
-  width: 1px;
-  height: 100%;
-  font-size: 0.7em;
-  vertical-align: baseline;
-  position: relative;
-  top: -0.15em;
-  left: 10px;
-  border-right: 2px solid #333;
 }
 .scene__sub-title {
   font-size: 22px;
@@ -520,10 +537,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0.6em;
   display: none;
 }
-.section__title:after {
-  content: "";
-  width: 1px;
-  height: 100%;
+.section__title.cursor-in-out:after {
   font-size: 0.8em;
   vertical-align: baseline;
   position: relative;
