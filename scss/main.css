@@ -92,6 +92,27 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(none);
   }
 }
+@media screen and (device-aspect-ratio: 40 / 71) {
+  .scene {
+    height: 500px;
+  }
+}
+/**
+ * iPad with portrait orientation.
+ */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+  .scene {
+    height: 1024px;
+  }
+}
+/**
+ * iPad with landscape orientation.
+ */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+  .scene {
+    height: 768px;
+  }
+}
 .scene {
   background-image: url(../images/home.png);
   background-repeat: no-repeat;
@@ -132,7 +153,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .scene__title {
   font-family: "bebas_neueregular";
-  font-size: 7vw;
+  font-size: 125px;
   letter-spacing: 0.1vw;
   line-height: 1;
   text-transform: uppercase;
@@ -180,6 +201,9 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 991px) {
   .scene {
     min-height: 0;
+  }
+  .scene__title {
+    font-size: 10vw;
   }
   .scene__action {
     height: 420px;
@@ -547,7 +571,7 @@ h1, h2, h3, h4, h5, h6 {
   clear: both;
 }
 .tools__item {
-  width: 50%;
+  width: 33%;
   display: inline-block;
   margin-bottom: 40px;
   text-align: center;
@@ -556,7 +580,7 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 100%;
 }
 .tools__container {
-  width: 50%;
+  width: 70%;
   float: right;
   margin-top: 30px;
   min-height: 310px;
@@ -715,6 +739,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 6px;
 }
 .social__link {
+  font-family: "digitalStrip";
   height: 44px;
   line-height: 44px;
   background: #4C75A3;
@@ -722,7 +747,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 55px;
   padding-right: 15px;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   display: inline-block;
   position: relative;
