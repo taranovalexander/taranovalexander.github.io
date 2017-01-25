@@ -93,6 +93,7 @@
     position: relative;
     width: 100%;
     font-family: 'Open Sans';
+    font-size: 400px;
 
     &__scene {
       position: fixed;

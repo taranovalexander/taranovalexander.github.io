@@ -71,6 +71,7 @@
       line-height: 1.5;
       overflow-x: hidden;
       height: 72px;
+      -webkit-appearance: none;
 
       &:focus + .TextAreaField__label {
         top: 15px;

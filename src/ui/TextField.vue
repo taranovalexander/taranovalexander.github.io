@@ -55,6 +55,7 @@
       outline: none;
       padding: 30px 15px 10px;
       font-size: 1em;
+      -webkit-appearance: none;
 
       &:focus + .TextField__label {
         top: 10px;

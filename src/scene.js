@@ -73,8 +73,8 @@ const moveCamera = (dest, speed, xCameraOffset, yCameraOffset) => {
 
   TWEEN.removeAll();
   _setView(xCameraOffset, yCameraOffset, animationSpeed);
-  _serCameraPosition(dest, animationSpeed);
-}
+  _setCameraPosition(dest, animationSpeed);
+};
 
 function _setView(xCameraOffset, yCameraOffset, animationSpeed) {
   let needUpdate = false;
@@ -86,7 +86,7 @@ function _setView(xCameraOffset, yCameraOffset, animationSpeed) {
     fullHeight: yCameraOffset && _isNumeric(yCameraOffset) ? window.innerHeight * Math.abs(yCameraOffset) : window.innerHeight,
     offsetX: xCameraOffset && _isNumeric(xCameraOffset) ? window.innerWidth * ( Math.abs(xCameraOffset) - 1 ) : 0,
     offsetY: yCameraOffset && _isNumeric(yCameraOffset) ? window.innerHeight * ( Math.abs(xCameraOffset) - 1 ) : 0,
-  }
+  };
 
   if (xCameraOffset < 0) { newCameraView.offsetX = -newCameraView.offsetX }
   if (yCameraOffset < 0) { newCameraView.offsetY = -newCameraView.offsetY }
@@ -95,7 +95,7 @@ function _setView(xCameraOffset, yCameraOffset, animationSpeed) {
     if (cameraView[key] !== newCameraView[key]) {
       needUpdate = true;
     }
-  })
+  });
 
   if (needUpdate) {
     new TWEEN.Tween(cameraView)
@@ -115,7 +115,7 @@ function _setView(xCameraOffset, yCameraOffset, animationSpeed) {
   }
 }
 
-function _serCameraPosition(dest, animationSpeed) {
+function _setCameraPosition(dest, animationSpeed) {
   const from = { x: Spline.currentPos };
   const target = { x: dest };
 
@@ -133,11 +133,15 @@ function _isNumeric(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
-window.addEventListener('resize', () => {
+function onResize() {
   Camera.aspect = window.innerWidth / window.innerHeight;
   Camera.updateProjectionMatrix();
   Postprocessing = InitPostprocessing();
   Renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+window.addEventListener('resize', () => {
+  onResize();
 }, false);
 
 export { init, animate, moveCamera };

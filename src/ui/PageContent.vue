@@ -39,7 +39,7 @@
     top: 0;
 
     &__container {
-      width: 40%;
+      width: 35%;
       max-width: 550px;
       background: $content_overlay_color;
       position: absolute;
