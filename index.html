@@ -7,8 +7,10 @@
 <link href="/style.css" rel="stylesheet"></head>
 <body class="loading">
   <div id="loading"><span>Loading. Please wait...</span></div>
+
   <div id="app">
-    <Layout :pages="pages" :nav-items="navItems"></Layout>
+    <Layout :pages="pages" :nav-items="navItems" v-if="!mobile"></Layout>
+    <Notification v-if="mobile"></Notification>
   </div>
 <script type="text/javascript" src="/bundle.js"></script></body>
 <script>
