@@ -44,7 +44,7 @@
       background: $content_overlay_color;
       position: absolute;
       left: -100%;
-      top: calc(50% - 100px);
+      top: 45%;
       transform: translate(0, -50%);
       display: flex;
       flex-direction: row;
@@ -66,7 +66,7 @@
     }
 
     &__title {
-      font-size: 2.8rem;
+      font-size: 2.4rem;
       margin-bottom: 20px;
       letter-spacing: 0.1em;
       font-family: 'akzidenz-grotesk', sans-serif;
@@ -81,7 +81,7 @@
     }
 
     &__content {
-      font-size: 1.15rem;
+      font-size: 1rem;
       line-height: 1.5;
       position: relative;
       left: -300%;

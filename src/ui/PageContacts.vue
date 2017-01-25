@@ -112,7 +112,7 @@
       left: 10%;
       height: 50px;
       color: $button_primary_text_color;
-      font-size: 1.2rem;
+      font-size: 1rem;
 
       a {
         color: $button_primary_text_color;
@@ -121,7 +121,7 @@
     }
 
     &__title {
-      font-size: 2.8rem;
+      font-size: 2.4rem;
       text-transform: uppercase;
       font-family: 'akzidenz-grotesk', sans-serif;
       color: $form_text_color;
@@ -143,7 +143,7 @@
       max-width: 600px;
       position: absolute;
       left: 10%;
-      top: calc(50% - 50px);
+      top: calc(45%);
       transform: translate(0, -50%);
     }
 

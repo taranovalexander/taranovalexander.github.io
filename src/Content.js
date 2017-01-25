@@ -24,7 +24,7 @@ const Content = {
       previous: false,
       spline_position: 0.15,
       cameraOffset: {
-        x: 0,
+        x: -1.05,
         y: 0,
       },
       data: {
