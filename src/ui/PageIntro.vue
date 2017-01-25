@@ -78,6 +78,7 @@
       font-size: 1.1rem;
       color: $content_text_color;
       text-transform: uppercase;
+      font-weight: 400;
     }
 
     &__hint {

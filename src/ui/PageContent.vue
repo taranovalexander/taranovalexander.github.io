@@ -60,17 +60,14 @@
     &__container-inner {
       width: 100%;
       color: $content_text_color;
-      font-weight: 700;
       text-align: left;
       position: relative;
     }
 
     &__title {
-      font-size: 2.4rem;
+      font-size: 2.8rem;
       margin-bottom: 20px;
-      letter-spacing: 0.1em;
       font-family: 'akzidenz-grotesk', sans-serif;
-      text-transform: uppercase;
       white-space: nowrap;
       position: relative;
       left: -300%;

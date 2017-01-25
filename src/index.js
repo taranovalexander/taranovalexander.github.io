@@ -3,6 +3,7 @@ import MobileDetect from 'mobile-detect';
 import Content from './Content.js';
 import Vue from 'vue';
 import Layout from './ui/Layout.vue';
+import Notification from './ui/Notification.vue';
 import './style.css'
 
 let app;
@@ -30,7 +31,7 @@ function updateState() {
     if (page.active) {
       prevIndex = index;
     }
-  })
+  });
 
   for (let i = 0; i < pagesNumber; i++) {
     // set active page
@@ -76,23 +77,26 @@ function initUI() {
     data: {
       pages,
       navItems,
+      mobile: false
     },
     components: {
       Layout,
+      Notification,
     },
   });
   scrollDetect();
 }
 
-if (window.WebGLRenderingContext) {
+if (md.phone() !== null || md.tablet() !== null) {
+  document.body.className = 'loaded';
+  initUI();
+  app.mobile = true;
+} else if (window.WebGLRenderingContext) {
   THREE.DefaultLoadingManager.onLoad = function () {
     document.body.className = 'loaded';
     initUI();
-
-    if (md.phone() === null) {
-      init(document.querySelector('#scene'));
-      animate();
-    }
+    init(document.querySelector('#scene'));
+    animate();
   };
 } else {
   document.body.className = 'loaded';

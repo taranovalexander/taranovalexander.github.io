@@ -23,16 +23,18 @@
             <TextAreaField label="Message" name="message" required="true" />
           </div>
         </div>
+        <div class="PageContacts__row">
+          <div class="PageContacts__form-field PageContacts__form-hint">
+            Or send me e-mail: <a :href="emailHref">{{page.data.email}}</a>
+          </div>
+        </div>
         <div class="PageContacts__row" style="margin-top: 30px">
           <div class="PageContacts__form-field">
-            <ButtonComponent type="submit" block="false" mode="primary" text="Send" />
+            <ButtonComponent type="submit" block="false" mode="primary" text="Send" :fetching="fetching" />
           </div>
       </div>
       </div>
     </form>
-    <div class="PageContacts__footer">
-      Or send me e-mail: <a :href="emailHref">{{page.data.email}}</a>
-    </div>
   </div>
 </template>
 
@@ -49,6 +51,7 @@
       return {
         title: this.page.data.title,
         successMsg: null,
+        fetching: false,
       }
     },
     computed: {
@@ -78,6 +81,8 @@
           _subject: 'New message from promo site',
         }
 
+        this.fetching = true;
+
         Request('POST', 'https://formspree.io/sander.taranov@gmail.com', {}, data)
           .then(success => {
             form.name.value = '';
@@ -85,8 +90,10 @@
             form.message.value = '';
             this.title = this.page.data.successTitle;
             this.successMsg = this.page.data.successMsg;
+            this.fetching = false;
           }, error => {
-            console.error(error.error)
+            console.error(error.error);
+            this.fetching = false;
           });
       }
     }
@@ -104,25 +111,10 @@
     bottom: -100%;
     opacity: 0;
     background: rgba(0, 0, 0, 0);
-
-    &__footer {
-      position: absolute;
-      width: 80%;
-      bottom: 0;
-      left: 10%;
-      height: 50px;
-      color: $button_primary_text_color;
-      font-size: 1rem;
-
-      a {
-        color: $button_primary_text_color;
-        cursor: pointer;
-      }
-    }
+    color: $form_text_color;
 
     &__title {
-      font-size: 2.4rem;
-      text-transform: uppercase;
+      font-size: 2.8rem;
       font-family: 'akzidenz-grotesk', sans-serif;
       color: $form_text_color;
       text-align: left;
@@ -140,7 +132,7 @@
     &__form {
       border-top: none;
       width: 80%;
-      max-width: 600px;
+      max-width: 500px;
       position: absolute;
       left: 10%;
       top: calc(45%);
@@ -160,6 +152,16 @@
       position: relative;
       padding: 0 15px;
       flex: 1;
+    }
+
+    &__form-hint {
+      color: $form_text_color;
+      font-size: 1rem;
+
+      a {
+        color: $form_text_color;
+        cursor: pointer;
+      }
     }
 
     &__form-field-label {
