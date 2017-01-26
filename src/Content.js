@@ -31,8 +31,8 @@ const Content = {
         title: 'About me',
         content: `Hi, My name is Alexander, and I'm a Front End Engineer from Siberia.
          My goal is to provide my clients with outstanding quality of work and also build long lasting professional
-         relationships. I can assure you that whatever is your idea it will be turned into
-         awesome looking app.`,
+         relationships. I always on top of the latest technologies, have a keen eye for design and I love helping
+         customers make the best of the product.`
       }
     },
     {
@@ -66,8 +66,8 @@ const Content = {
       },
       data: {
         title: 'My skills',
-        content: `I'm Expert at work with ECMAScript 6, and I love to use progressive technologies.
-Have wide and strong experience of work with JavaScript frameworks such as React.js, Angular.js, Vue.js.`,
+        content: `I'm Expert at work with ECMAScript 6, and I love to use latest technologies.
+        Have wide and strong experience of work with JavaScript frameworks such as React.js, Redux, Angular.js, Vue.js.`,
       }
     },
     {

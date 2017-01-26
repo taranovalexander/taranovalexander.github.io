@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="PageIntro__hint">
-      Scroll to se next
+      Scroll to see next
     </div>
   </div>
 </template>
