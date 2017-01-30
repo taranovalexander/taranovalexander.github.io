@@ -6,27 +6,38 @@ const textureLoader = new THREE.TextureLoader();
 const texture_normal = textureLoader.load(normalTexture);
 const texture_snow = textureLoader.load(snowTexture);
 
-texture_normal.wrapS = THREE.RepeatWrapping;
-texture_normal.wrapT = THREE.RepeatWrapping;
-texture_normal.repeat.set(1, 1);
+const makePlaneGeometry = function(width, height, widthSegments, heightSegments) {
+  const geometry = new THREE.PlaneGeometry(width, height, widthSegments, heightSegments);
+  const X_OFFSET_DAMPEN = 0.4;
+  const Y_OFFSET_DAMPEN = 0.5;
+  const Z_OFFSET_DAMPEN = 0.3;
+  const randSign = function() { return (Math.random() > 0.5) ? 1 : -1; };
 
-texture_snow.wrapS = THREE.RepeatWrapping;
-texture_snow.wrapT = THREE.RepeatWrapping;
-texture_snow.repeat.set(25, 25);
+  for (let vertIndex = 0; vertIndex < geometry.vertices.length; vertIndex++) {
+    geometry.vertices[vertIndex].x += Math.random() / X_OFFSET_DAMPEN * randSign();
+    geometry.vertices[vertIndex].y += Math.random() / Y_OFFSET_DAMPEN * randSign();
+    geometry.vertices[vertIndex].z += Math.random() / Z_OFFSET_DAMPEN * randSign();
+  }
+
+  geometry.dynamic = true;
+  geometry.computeFaceNormals();
+  geometry.computeVertexNormals();
+  geometry.normalsNeedUpdate = true;
+  return geometry;
+};
 
 const Ground = new THREE.Mesh(
-      new THREE.BoxGeometry(2000, 1, 2000),
-      new THREE.MeshStandardMaterial( {
-      color: 0xffffff,
-      map: texture_snow,
-      normalMap: texture_normal,
-      normalScale: new THREE.Vector2(0.5, 0.5),
-      metalness: 0,
-      roughness: 10,
-      shininess: 0,
-      })
+  makePlaneGeometry(1000, 1000, 100, 100),
+  new THREE.MeshPhongMaterial( {
+  color: 0xffffff,
+  metalness: 0,
+  roughness: 10,
+  shininess: 0,
+  side: THREE.DoubleSide
+  })
 );
 
+Ground.rotation.x = Math.PI / 2;
 Ground.receiveShadow = true;
 Ground.position.set(0, FLOOR, 0);
 

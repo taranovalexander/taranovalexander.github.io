@@ -41,6 +41,7 @@
       top: 22px;
       font-size: 1em;
       transition: all 0.2s ease-in-out;
+      pointer-events: none;
     }
 
     &__input {

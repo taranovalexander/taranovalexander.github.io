@@ -15,7 +15,7 @@ const texture_flake_3 = textureLoader.load(snowFlake3);
 const texture_flake_4 = textureLoader.load(snowFlake4);
 const texture_flake_5 = textureLoader.load(snowFlake5);
 
-for (let i = 0; i < 5000; i++) {
+for (let i = 0; i < 3000; i++) {
   const vertex = new THREE.Vector3();
   vertex.x = Math.random() * 2000 - 1000;
   vertex.y = Math.random() * 2000 - 1000;
@@ -24,7 +24,7 @@ for (let i = 0; i < 5000; i++) {
 }
 
 const parameters = [
-  [[1.0, 0.2, 0.5], texture_flake_2, 20],
+  //[[1.0, 0.2, 0.5], texture_flake_2, 20],
   [[0.95, 0.1, 0.5], texture_flake_3, 15],
   [[0.90, 0.05, 0.5], texture_flake_1, 10],
   [[0.85, 0, 0.5], texture_flake_5, 8],
