@@ -9,13 +9,10 @@ fs.copy(build, 'static', function (err) {
   console.log('Static folder prepared');
   Git
     .add('static')
-    .stash([])
-    .commit('deploy', ['static'])
-    //.push(['-f', repository, 'master'], function(err, data) {
-    //  if (err) {
-    //    Git.reset(['--hard', 'HEAD~1']);
-    //  }
-    //})
+    //.stash([])
+    .commit('deploy:stage', ['static'])
+    .push(['-f', repository, 'new_version'], function(err, data) {
+    })
     //.reset(['--hard', 'HEAD~1'])
-    .stash(['apply']);
+    //.stash(['apply']);
 });
