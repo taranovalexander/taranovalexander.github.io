@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<link>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alexander FrontEnd Developer</title>
+<link href="/style.css" rel="stylesheet"></head>
+<body class="loading">
+  <div id="loading"><span>Loading. Please wait...</span></div>
+
+  <div id="app">
+    <Layout :pages="pages" :nav-items="navItems" v-if="!mobile"></Layout>
+    <Notification v-if="mobile"></Notification>
+  </div>
+<script type="text/javascript" src="/bundle.js"></script></body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90812388-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>
