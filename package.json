@@ -6,7 +6,7 @@
     "start": "node server.js",
     "build": "webpack --config webpack.production.config.js --progress --profile --colors",
     "lint": "eslint src",
-    "deploy": "git-directory-deploy --directory build --branch build --repo stage"
+    "deploy:stage": "node git.js --build build --repository stage"
   },
   "devDependencies": {
     "autoprefixer": "6.3.7",
@@ -35,6 +35,7 @@
     "react-hot-loader": "^1.3.0",
     "sass-loader": "4.1.1",
     "scss-loader": "0.0.1",
+    "simple-git": "1.65.0",
     "style-loader": "0.13.1",
     "stylus": "0.54.5",
     "stylus-loader": "2.1.1",
