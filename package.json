@@ -6,7 +6,7 @@
     "start": "node server.js",
     "build": "webpack --config webpack.production.config.js --progress --profile --colors",
     "lint": "eslint src",
-    "deploy:stage": "node git.js --build build --repository stage"
+    "deploy": "git-directory-deploy --directory build --branch build --repo stage"
   },
   "devDependencies": {
     "autoprefixer": "6.3.7",
